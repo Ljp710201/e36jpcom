@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버티컬핏 | 평형 감각 향상 운동 보조 솔루션</title>
+    <meta name="description" content="어지럼증 완화와 균형 감각 회복을 위한 맞춤형 전정재활 솔루션">
+    <link rel="stylesheet" href="./styles.css">
+    <!-- Pretendard Font -->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <div class="navbar-logo">버티컬핏</div>
+            <ul class="nav-links">
+                <li><a href="#services" class="nav-link">서비스</a></li>
+                <li><a href="#values" class="nav-link">가치</a></li>
+                <li><a href="#contact" class="nav-link">문의</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="다크모드 전환">
+                <svg id="themeIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <header class="hero-section">
+        <div class="container hero-content">
+            <h1 class="hero-title">버티컬핏</h1>
+            <p class="hero-subtitle">흔들리는 일상에 다시 중심을 세웁니다</p>
+        </div>
+    </header>
+
+    <!-- 2. Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2 class="section-title">재활 서비스</h2>
+            <div class="services-grid" id="servicesGrid">
+                <!-- Cards will be rendered here by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Core Values Section -->
+    <section class="values-section" id="values">
+        <div class="container">
+            <h2 class="section-title">핵심 가치</h2>
+            <div class="values-content">
+                <div class="value-item">
+                    <h3 class="value-title">안전한 회복</h3>
+                    <p class="value-text">풍부한 임상경험을 바탕으로 과학적이고 체계적인 재활 서비스를 제공합니다.</p>
+                </div>
+                <div class="value-item">
+                    <h3 class="value-title">전문적 가이드</h3>
+                    <p class="value-text">개개인의 특성을 존중하며 따뜻한 마음으로 소통하고 공감합니다.</p>
+                </div>
+                <div class="value-item">
+                    <h3 class="value-title">일상의 균형</h3>
+                    <p class="value-text">단기적 증상 완화를 넘어 삶의 질을 높이는 근본적인 회복을 추구합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Consultation Form Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">상담 문의</h2>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">이름</label>
+                    <input type="text" id="name" name="name" placeholder="이름을 입력해주세요" required>
+                    <span class="error-message" id="name-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name="email" placeholder="이메일을 입력해주세요" required>
+                    <span class="error-message" id="email-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="message">메시지</label>
+                    <textarea id="message" name="message" rows="5" placeholder="문의하실 내용을 입력해주세요" required></textarea>
+                    <span class="error-message" id="message-error"></span>
+                </div>
+                <button type="submit" class="submit-btn" aria-label="상담 문의하기">문의하기</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 6. 센터 운영 현황 섹션 -->
+    <section class="ops-section" id="ops">
+        <div class="container">
+            <h2 class="section-title">센터 운영 현황</h2>
+            <p class="ops-subtitle">2025년 12월 ~ 2026년 2월 분석 결과를 기반으로 한 데이터입니다.</p>
+
+            <!-- 차트 그리드 -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3 class="chart-label">📅 월별 매출 추이</h3>
+                    <img src="charts/monthly_revenue_bar.png" alt="월별 매출 추이 막대 차트" class="chart-img">
+                </div>
+                <div class="chart-card">
+                    <h3 class="chart-label">🏥 증상 유형별 방문 비중</h3>
+                    <img src="charts/symptom_pie.png" alt="증상 유형별 방문 비중 파이 차트" class="chart-img">
+                </div>
+            </div>
+
+            <!-- 에이전트 분석 결과 -->
+            <div class="ops-insight" id="opsInsightBox">
+                <div class="ops-insight-header">
+                    <span class="ops-badge">🤖 에이전트 분석 결과</span>
+                    <button class="tts-btn" id="ttsBtn" aria-label="분석 결과 음성으로 읽기" onclick="readInsight()">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+                        음성으로 듣기
+                    </button>
+                </div>
+                <p class="ops-insight-text" id="opsInsightText">
+                    이석증(BPPV) 환자 비중이 전체 방문의 약 37%로 가장 높습니다. 이에 따라 이석증 관련 맞춤 운동 프로그램을 강화하여 더 많은 분들이 균형 감각 회복에 도움을 받으실 수 있도록 지원을 확대합니다.
+                </p>
+            </div>
+
+            <!-- 의료법 면책 안내 -->
+            <div class="ops-disclaimer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                <p>버티컬핏은 「의료법」상 의료기관이 아니며, 의료 행위·진단·처방을 제공하지 않습니다. 본 센터의 모든 프로그램은 <strong>평형 감각 향상을 목적으로 하는 운동 보조 서비스</strong>입니다. 건강에 이상이 있는 경우 반드시 의사·전문의와 상담하시기 바랍니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">버티컬핏</div>
+                <p class="footer-text" style="text-align: center;">
+                    <strong>본 서비스는 의료 행위나 진단을 제공하지 않으며, 평형 감각 향상을 돕는 운동 보조 솔루션입니다.</strong><br><br>
+                    서울시 OO구 OO동 123-4 / contact@verticalfit.kr / 02-123-4567<br>
+                    &copy; 2026 버티컬핏. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 6. Chat Widget -->
+    <div class="chat-widget-container" id="chatWidgetContainer">
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <h3>버티컬핏 상담 도우미</h3>
+                <button id="closeChatBtn" aria-label="채팅 닫기">&times;</button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="chat-message bot-message">안녕하세요! 버티컬핏입니다. 무엇을 도와드릴까요?</div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="chatInput" placeholder="질문을 입력해주세요..." aria-label="채팅 입력">
+                <button id="sendChatBtn" aria-label="메시지 전송">전송</button>
+            </div>
+        </div>
+        <button class="chat-toggle-btn" id="chatToggleBtn" aria-label="채팅 열기/닫기">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <script>
+        // 재활 서비스 데이터 (리팩토링)
+        const servicesData = [
+            {
+                icon: '<path d="M22 12h-4l-3 9L9 3l-3 9H2" />',
+                title: '시선 고정 훈련',
+                desc: '어지럼증 감소를 위한 전정안반사 강화 운동'
+            },
+            {
+                icon: '<circle cx="12" cy="12" r="10" /><path d="M12 8v4" /><path d="M12 16h.01" />',
+                title: '습관화 운동',
+                desc: '특정 움직임에서 발생하는 어지럼증에 적응하는 훈련'
+            },
+            {
+                icon: '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />',
+                title: '평형 유지 교육',
+                desc: '일상생활 속 낙상 방지를 위한 중심 잡기 연습'
+            }
+        ];
+
+        // 서비스 렌더링 함수
+        function renderServices() {
+            const grid = document.getElementById('servicesGrid');
+            grid.innerHTML = servicesData.map(service => `
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg class="service-svg" viewBox="0 0 24 24">
+                            ${service.icon}
+                        </svg>
+                    </div>
+                    <h3 class="service-title">${service.title}</h3>
+                    <p class="service-desc">${service.desc}</p>
+                </div>
+            `).join('');
+        }
+
+        // 초기 렌더링
+        renderServices();
+
+        // 개별 필드 유효성 검사 함수
+        function validateField(elementId, condition, errorMessage) {
+            const element = document.getElementById(elementId);
+            const errorElement = document.getElementById(elementId + '-error');
+
+            if (condition) {
+                element.classList.remove('invalid');
+                element.classList.add('valid');
+                errorElement.textContent = '';
+                return true;
+            } else {
+                element.classList.remove('valid');
+                element.classList.add('invalid');
+                errorElement.textContent = errorMessage;
+                return false;
+            }
+        }
+
+        // 전체 폼 유효성 검사
+        function validateForm() {
+            const nameValue = document.getElementById('name').value.trim();
+            const emailValue = document.getElementById('email').value.trim();
+            const messageValue = document.getElementById('message').value.trim();
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            const isNameValid = validateField('name', nameValue !== '', '이름을 입력해주세요');
+            const isEmailValid = validateField('email', emailRegex.test(emailValue), '올바른 이메일을 입력해주세요');
+            const isMessageValid = validateField('message', messageValue.length >= 10, '메시지를 10자 이상 입력해주세요');
+
+            return isNameValid && isEmailValid && isMessageValid;
+        }
+
+        // 1. 호버 애니메이션 함수
+        function applyHoverAnimation() {
+            const cards = document.querySelectorAll('.service-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-10px) scale(1.02)';
+                    card.style.boxShadow = '0 30px 40px -15px rgba(20, 184, 166, 0.4)';
+                    card.style.borderColor = 'var(--primary-color)';
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = '';
+                    card.style.boxShadow = '';
+                    card.style.borderColor = '';
+                });
+            });
+        }
+
+        // 2. 부드러운 스크롤 함수
+        function setupSmoothScroll() {
+            const links = document.querySelectorAll('.nav-link');
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        const navHeight = document.getElementById('navbar').offsetHeight;
+                        window.scrollTo({
+                            top: targetSection.offsetTop - navHeight,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // 3. 폼 제출 로직 함수
+        function handleFormSubmit() {
+            const form = document.getElementById('contactForm');
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                if (validateForm()) {
+                    alert('버티컬핏의 솔루션 상담을 신청해주셔서 감사합니다. 담당 팀에서 빠르게 연락드리겠습니다.');
+                    this.reset();
+                    ['name', 'email', 'message'].forEach(id => {
+                        document.getElementById(id).classList.remove('valid', 'invalid');
+                    });
+                }
+            });
+        }
+
+        // 4. 다크모드 토글 함수
+        function setupDarkModeToggle() {
+            const toggleBtn = document.getElementById('themeToggle');
+            const themeIcon = document.getElementById('themeIcon');
+
+            const renderIcon = (isDark) => {
+                if (isDark) {
+                    themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+                } else {
+                    themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+                }
+            }
+
+            let isDarkMode = false;
+
+            toggleBtn.addEventListener('click', () => {
+                isDarkMode = !isDarkMode;
+                if (isDarkMode) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
+                }
+                renderIcon(isDarkMode);
+            });
+
+            renderIcon(isDarkMode);
+        }
+
+        // 6. 음성 읽기 함수 (Web Speech API)
+        function readInsight() {
+            if (!window.speechSynthesis) {
+                alert('이 브라우저는 음성 읽기를 지원하지 않습니다.');
+                return;
+            }
+            const text = document.getElementById('opsInsightText').innerText;
+            const btn = document.getElementById('ttsBtn');
+
+            // 이미 읽는 중이면 중지
+            if (window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
+                btn.textContent = '음성으로 듣기';
+                return;
+            }
+
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ko-KR';
+            utterance.rate = 0.95;
+            utterance.pitch = 1;
+
+            utterance.onstart = () => { btn.textContent = '⏹ 읽는 중 (클릭 시 중지)'; };
+            utterance.onend = () => { btn.textContent = '음성으로 듣기'; };
+            utterance.onerror = () => { btn.textContent = '음성으로 듣기'; };
+
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // 5. 챗 위젯 및 검색 함수
+        const faqData = [
+            {
+                keywords: ['주차'],
+                answer: '센터 건물 내 전용 주차장을 무료로 이용하실 수 있습니다.'
+            },
+            {
+                keywords: ['예약'],
+                answer: '홈페이지 문의 폼을 남겨주시거나 전화(02-123-4567)로 연락주시면 담당 코치가 안내해 드립니다.'
+            },
+            {
+                keywords: ['방문', '처음'],
+                answer: '현재의 균형 감각 상태를 체크하고 개인별 맞춤형 운동 플랜을 설계해 드립니다.'
+            },
+            {
+                keywords: ['비용', '가격'],
+                answer: '프로그램별 비용은 개별 상담 후 난이도와 기간에 따라 안내해 드리고 있습니다.'
+            }
+        ];
+
+        function findChatAnswer(inputMessage) {
+            const defaultAnswer = '담당 상담사에게 연결해드리겠습니다. 연락처를 남겨주세요.';
+            const messageLower = inputMessage.toLowerCase();
+
+            for (const item of faqData) {
+                for (const keyword of item.keywords) {
+                    if (messageLower.includes(keyword)) {
+                        return item.answer;
+                    }
+                }
+            }
+            return defaultAnswer;
+        }
+
+        function setupChatWidget() {
+            const toggleBtn = document.getElementById('chatToggleBtn');
+            const closeBtn = document.getElementById('closeChatBtn');
+            const chatWindow = document.getElementById('chatWindow');
+            const sendBtn = document.getElementById('sendChatBtn');
+            const chatInput = document.getElementById('chatInput');
+            const chatBody = document.getElementById('chatBody');
+
+            function toggleChat() {
+                chatWindow.classList.toggle('open');
+            }
+
+            toggleBtn.addEventListener('click', toggleChat);
+            closeBtn.addEventListener('click', toggleChat);
+
+            function addMessage(text, isBot) {
+                const msgDiv = document.createElement('div');
+                msgDiv.className = `chat-message ${isBot ? 'bot-message' : 'user-message'}`;
+                msgDiv.textContent = text;
+                chatBody.appendChild(msgDiv);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+
+            function handleSendMessage() {
+                const userText = chatInput.value.trim();
+                if (!userText) return;
+
+                addMessage(userText, false);
+                chatInput.value = '';
+
+                setTimeout(() => {
+                    const botResponse = findChatAnswer(userText);
+                    addMessage(botResponse, true);
+                }, 500);
+            }
+
+            sendBtn.addEventListener('click', handleSendMessage);
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') handleSendMessage();
+            });
+        }
+
+        // 모든 기능 실행
+        document.addEventListener('DOMContentLoaded', () => {
+            applyHoverAnimation();
+            setupSmoothScroll();
+            handleFormSubmit();
+            setupDarkModeToggle();
+            setupChatWidget();
+        });
+    </script>
+</body>
+
+</html>
